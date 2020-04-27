@@ -1,0 +1,13 @@
+version: '3.0'
+
+services:
+  flask:
+    build:
+      context: ./translator
+    restart: always
+    volumes:
+      - ./translator:/app
+    ports:
+      - "8080:8080"
+    command: python3 run.py
+    #command: gunicorn -w 8 -b :8080 app:app
