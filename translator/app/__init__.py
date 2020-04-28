@@ -18,7 +18,7 @@ def login():
         api_key = json_data.get("apikey", "")
 
         if api_key == "<s;_xLFj<ab,O{e":
-            text2translate = json_data.get("text", "")
+            text2translate = json_data.get("text", "").replace("&nsbp;", "")
             translation = translator.translate(text2translate, dest='cs').text
         else:
             pass
